@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canvas</title>
+  <style>
+    canvas {
+      border: 1px blue solid;
+    }
+  </style>
+</head>
+<body>
+  <!-- 准备画布，并设置大小 -->
+  <!-- 注意：大小不是px单位的。 -->
+  <canvas width="500" height="300" id="myCanvas"></canvas>
+</body>
+<script>
+  // 准备绘制工具
+  // var myCanvas = document.querySelector("canvas");
+  var myCanvas = document.getElementById("myCanvas");
+  // 绘制工具箱
+  var cxt = myCanvas.getContext("2d");
+  // 移动画笔
+  cxt.moveTo(100,200);
+  // 绘制直线
+  cxt.lineTo(100,300);
+  // 描边（上颜色）
+  cxt.stroke();
+</script>
+</html>
