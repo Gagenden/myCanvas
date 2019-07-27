@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>绘制平行线</title>
+  <style>
+    canvas {
+      border: 1px blue solid;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="500"></canvas>
+</body>
+<script>
+  var myCanvas = document.getElementById("myCanvas");
+  var ctx = myCanvas.getContext("2d");
+
+  // 绘制第一条直线
+  // 注意需要开始新路径 : 解决样式覆盖的问题
+  ctx.beginPath();
+  ctx.moveTo(100,100);
+  ctx.lineTo(100,400);
+
+  // 给定指定的颜色
+  ctx.strokeStyle = "red";
+  // 给定指定的宽度 10px  默认的是1px;
+  ctx.lineWidth = 10;
+  ctx.stroke();
+
+  // 绘制第二条直线
+  // 注意需要开始新路径
+  ctx.beginPath();
+  ctx.moveTo(200,100);
+  ctx.lineTo(200,400);
+  ctx.lineWidth = 30;
+  ctx.strokeStyle = "pink";
+
+  // 描边
+  ctx.stroke();
+</script>
+</html>
