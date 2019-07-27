@@ -1,0 +1,26 @@
+lineWidth 线宽，默认是1px。
+ctx.lineWidth = 数字;
+
+lineCap 线末端的类型：默认（butt）、round、square。
+ctx.lineCap = "round";
+
+lineJoin 相交线的拐点：默认（miter）、round、bevel。
+ctx.lineJoin = "round";
+
+strokeStyle 线的颜色
+ctx.strokeStyle = "颜色";
+
+setLineDash() 设置虚线
+[数字a，数字b] 虚线宽度集合
+ctx.setLineDash([数字a，数字b])
+数字a代表实的，
+数字b代表虚的。
+两者一直重复，直到应有的长度。
+
+getLineDash() 获取虚线宽度集合
+ctx.getLineDash();
+
+lineDashOffset 设置虚线偏移量（负值向右偏移）
+ctx.lineDashOffset = 正负数值
+如果是正的，虚线往左偏移。
+如果是负的，虚线往右偏移。
