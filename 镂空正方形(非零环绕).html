@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>填充规则--》非零环绕</title>
+  <style>
+    canvas {
+      border: 1px blue solid;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="600" height="400"></canvas>
+</body>
+<script>
+  var myCanvas = document.querySelector("canvas");
+  var ctx = myCanvas.getContext("2d");
+
+  // 顺时针绘制外正方形
+  ctx.moveTo(100,100);
+  ctx.lineTo(300,100);
+  ctx.lineTo(300,300);
+  ctx.lineTo(100,300);
+  //自动闭合  可以解决收尾连接点的残缺部分
+  ctx.closePath();
+
+  // 逆时针绘制内正方形
+  ctx.moveTo(150,150);
+  ctx.lineTo(150,250);
+  ctx.lineTo(250,250);
+  ctx.lineTo(250,150);
+  //自动闭合
+  ctx.closePath();
+
+
+  // 根据非零环绕，会填充两个正方形之间的内容。
+  /*
+  非零环绕 从判断是否需要填充的区域内画一条直线，
+  若与顺时针绘制的线相交则为+1，
+  若与负时针绘制的线相交则为-1，
+  相加所得到的值，
+  若值为非零，则填充该区域。
+  反之，不填充。
+  */
+  ctx.fill();
+</script>
+</html>
