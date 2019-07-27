@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>填充（fill）三角形</title>
+  <style>
+    canvas{
+      border: 1px blue solid;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="600" height="400"></canvas>
+</body>
+<script>
+  var myCanvas = document.querySelector("canvas");
+  var ctx = myCanvas.getContext("2d");
+
+  ctx.moveTo(200,100);
+  ctx.lineTo(100,250);
+  ctx.lineTo(300,250);
+
+  // 自动闭合
+  // ctx.closePath();
+  
+  // 描边
+  // ctx.stroke();
+
+  // 填充：会将围起来的内容填充，默认填充色是黑色。
+  ctx.fill();
+</script>
+</html>
