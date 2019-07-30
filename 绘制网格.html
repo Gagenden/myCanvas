@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>绘制网格</title>
+  <style>
+    canvas {
+      border: 1px black solid;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="600" height="400"></canvas>
+</body>
+<script>
+  var myCanvas = document.querySelector('canvas');
+  var ctx = myCanvas.getContext('2d');
+
+  // 设置网格大小
+  var girdSize = 10;
+
+  // canvas 的高度、宽度 (或者是 myCanvas.height)
+  var canvasHeight = ctx.canvas.height;
+  var canvasWidth = myCanvas.width;
+  
+  // 绘制的网格横线的数量 注意：需要向下取整（防止除不尽）
+  var xTotal = Math.floor(canvasHeight / girdSize);
+
+  // 绘制的网格竖线的数量 注意：需要向下取整（防止除不尽）
+  var yTotal = Math.floor(canvasWidth / girdSize);
+
+  // 遍历绘制网格
+  // 绘制横线
+  for (let i = 0; i <= xTotal; i++) {
+    // 开始新路径
+    ctx.beginPath();
+    ctx.moveTo(0, i * girdSize - 0.5);
+    ctx.lineTo(canvasWidth, i * girdSize - 0.5);
+    ctx.strokeStyle = "#ccc";
+    ctx.stroke(); 
+  }
+
+  // 绘制竖线
+  for (let i = 0; i <= yTotal; i++) {
+    // 开始新路径
+    ctx.beginPath();
+    ctx.moveTo(i * girdSize - 0.5, 0);
+    ctx.lineTo(i * girdSize - 0.5, canvasHeight);
+    ctx.strokeStyle = "#ccc";
+    ctx.stroke(); 
+  }
+</script>
+</html>
